@@ -1,5 +1,7 @@
-read
-play
-study
-play
-study
+read a book
+play soccer
+study python
+play game
+study english
+play tennis
+eat breakfast

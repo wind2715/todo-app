@@ -17,28 +17,27 @@ print("It is", now)
 while True:
     user_action = input("Enter type add, show, edit, complete or exit: ")
     if 'add' in user_action:
-        todos = get_todo("to_do_list/list.txt")
+        todos = get_todo()
         todo = input("Enter a todo: ")
-        todo.title()
         todos.append(todo + "\n")
-        write_todo(todos, "to_do_list/list.txt")
+        write_todo(todos)
     elif 'show' in user_action:
-        todos = get_todo("to_do_list/list.txt")
+        todos = get_todo()
         for index, item in enumerate(todos):
             item = item.strip("\n")
             print(f"{index + 1}.{item}")
     elif 'edit' in user_action:
-        todos = get_todo("to_do_list/list.txt")
+        todos = get_todo()
         number = int(input("Number of todo you want to edit: "))
         number -= 1
         new_todo = input("Enter new todo: ")
         todos[number] = new_todo + "\n"
-        write_todo(todos, "to_do_list/list.txt")
+        write_todo(todos)
     elif 'complete' in user_action:
-        todos = get_todo("to_do_list/list.txt")
+        todos = get_todo()
         number = int(input("Todo you completed: "))
         todos.pop(number - 1)
-        write_todo(todos, "to_do_list/list.txt")
+        write_todo(todos)
     elif 'exit' in user_action:
         break
     else:
